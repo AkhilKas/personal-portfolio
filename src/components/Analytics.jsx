@@ -3,7 +3,7 @@ import ReactGA from 'react-ga4';
 
 export default function Analytics() {
   useEffect(() => {
-    const MEASUREMENT_ID = 'G-JW5R3722K3';
+    const MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
     
     // Initialize Google Analytics
     ReactGA.initialize(MEASUREMENT_ID, {
