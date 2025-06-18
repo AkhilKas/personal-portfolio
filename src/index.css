@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "flowbite";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes waveX {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+}
+
+@keyframes waveXSlow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.animate-waveX {
+  animation: waveX 6s ease-in-out infinite;
+}
+
+.animate-waveXSlow {
+  animation: waveXSlow 12s ease-in-out infinite;
+}
