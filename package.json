@@ -5,12 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.8",
@@ -20,7 +17,6 @@
     "flowbite": "^3.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-scripts": "^0.0.0",
     "react-scrollspy": "^3.4.3",
     "tsparticles": "^3.8.1",
     "tsparticles-slim": "^2.12.0"
