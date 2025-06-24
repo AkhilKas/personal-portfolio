@@ -1,3 +1,4 @@
+import TabAttention from './components/TabAttention';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Timeline from './components/Timeline';
@@ -27,6 +28,7 @@ export default function App() {
     <div className="bg-gray-900 text-white">
       {/* Add Analytics component */}
       <Analytics />
+      <TabAttention />
       <div
         className="fixed top-0 left-0 h-1 bg-blue-600 z-[60] transition-all duration-300 ease-out"
         style={{ width: `${scrollProgress}%` }}
