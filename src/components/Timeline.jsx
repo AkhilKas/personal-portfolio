@@ -12,7 +12,7 @@ export default function Timeline() {
         <div>
           <ul className="list-disc list-inside space-y-1 text-gray-300">
             <li>I joined Reliance Jio as an ML Engineer.</li>
-            <li>The team was working on gender and age based ad-targetting using the voice captured from the remote's mic.</li>
+            <li>The team was working on gender and age based ad-targeting using the voice captured from the remote's mic.</li>
             <li>Machine learning models were trained using the mozilla common voice dataset on American English which was later extended to some of the Indian regional languages.</li>
           </ul>
         </div>
@@ -72,8 +72,8 @@ export default function Timeline() {
         <div>
           <ul className="list-disc list-inside space-y-1 text-gray-300">
             <li>I started my graduate studies at the Khoury College of Computer Sciences, Northeastern University, Boston.</li>
-            <li>I am currently purusing my Master's in Artificial Intelligence.</li>
-            <li>Courses taken include CS5010: Program Design Paradigm, CS5100: Foundations of AI, CS5180: Reinforcement Learning, and CS5800:Algorithms.</li>
+            <li>I am currently pursuing my Master's in Artificial Intelligence.</li>
+            <li>The courses I've taken include CS5010: Program Design Paradigms, CS5100: Foundations of AI, CS5180: Reinforcement Learning, and CS5800: Algorithms.</li>
           </ul>
         </div>
       ),
@@ -85,7 +85,7 @@ export default function Timeline() {
       id: 6,
       year: "Future",
       title: "PhD Aspirations",
-      details: "I plan to pursue a PhD in AI in the near future with a focus on the heatlhcare industry. My primary interest currenlt lies in building applications for the early detection of cancer using medical imaging.",
+      details: "I plan to pursue a PhD in AI in the near future with a focus on the healthcare industry. My primary interest currently lies in building applications for the early detection of cancer using medical imaging.",
       type: "goal",
       icon: "🚀",
       color: "yellow"
