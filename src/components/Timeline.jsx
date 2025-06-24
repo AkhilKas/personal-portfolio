@@ -6,60 +6,86 @@ export default function Timeline() {
   const timelineData = [
     {
       id: 1,
-      year: "2021",
-      title: "Undergraduate Studies",
-      description: "Completed Bachelor's degree, discovered passion for AI",
-      details: "During my undergraduate studies, I was first introduced to the fascinating world of artificial intelligence. Key courses in algorithms, data structures, and introductory machine learning sparked my interest in pursuing advanced research in this field.",
+      year: "Jan '23",
+      title: "ML Engineer",
+      details: (
+        <div>
+          <ul className="list-disc list-inside space-y-1 text-gray-300">
+            <li>I joined Reliance Jio as an ML Engineer.</li>
+            <li>The team was working on gender and age based ad-targetting using the voice captured from the remote's mic.</li>
+            <li>Machine learning models were trained using the mozilla common voice dataset on American English which was later extended to some of the Indian regional languages.</li>
+          </ul>
+        </div>
+      ),
+      type: "work", 
+      icon: "🏢",
+      color: "purple"
+    },
+    {
+      id: 2,
+      year: "Jul '23",
+      title: "Bachelor's",
+      details: (
+        <div>
+          <ul className="list-disc list-inside space-y-1 text-gray-300">
+            <li>I earned my Bachelor's degree in Computer Science and Engineering with a specialization in Deep Learning and graduated <i>summa cum laude</i>.</li>
+            <li>I received a 90% scholarship throughout my undergraduate studies for academic excellence.</li>
+            <li>I took courses such as Machine Learning, Foundations of Data Science, Neural Networks and Deep Learning, Mining of Massive Datasets, and Cloud Computing which laid the foundation for my master's.</li>
+          </ul>
+        </div>
+      ),
       type: "education",
       icon: "🎓",
       color: "blue"
     },
     {
-      id: 2,
-      year: "2022",
-      title: "Started MS at Northeastern",
-      description: "Began graduate studies at Khoury College",
-      details: "Joined Northeastern University's prestigious AI program. Started working with cutting-edge research in machine learning, computer vision, and deep learning. Began collaborating with faculty and fellow researchers on challenging AI problems.",
-      type: "education", 
-      icon: "🏛️",
-      color: "purple"
-    },
-    {
       id: 3,
-      year: "2023",
-      title: "First Research Projects",
-      description: "Started working on LiDAR and computer vision",
-      details: "Dove deep into computer vision research, specifically working on bird's eye view visualizations from NuScenes LiDAR data. Developed expertise in 3D point cloud processing, semantic segmentation, and real-time perception systems.",
-      type: "research",
-      icon: "🔬",
-      color: "green"
-    },
-    {
-      id: 4,
-      year: "2024",
-      title: "PoTE Paper Published",
-      description: "Published blockchain consensus research",
-      details: "Co-authored 'Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains' - a novel approach to securing healthcare data through blockchain technology. Paper presented at ICICC 2024 conference.",
-      type: "publication",
-      icon: "📄",
+      year: "Feb '24",
+      title: "Data Analyst",
+      details: (
+        <div>
+          <ul className="list-disc list-inside space-y-1 text-gray-300">
+            <li>I joined Ryzklytix Consulting Solutions.</li>
+            <li>I developed an end-to-end prototype for a product using Python and Streamlit.</li>
+            <li>I was later moved to the R&D team to work on the backend technologies to develop functions and stored procedures on MySQL Server.</li>
+          </ul>
+        </div>
+      ),
+      type: "work",
+      icon: "💻",
       color: "red"
     },
     {
-      id: 5,
-      year: "2025",
-      title: "Advanced Research",
-      description: "Multi-modal AI systems research",
-      details: "Currently advancing research in multiple domains: DepthAnything-based multi-frame depth estimation, voice-based age and gender classification, and exploring the intersection of computer vision and audio processing.",
+      id: 4,
+      year: "Apr '24",
+      title: "Paper Publication",
+      details: "I co-authored a paper on Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains which was presented at the International Conference on Innovative Computing & Communication (ICICC) 2024.",
       type: "research",
-      icon: "🧠",
+      icon: "📚",
+      color: "green"
+    },
+    {
+      id: 5,
+      year: "Sep '24",
+      title: "Master's",
+      details: (
+        <div>
+          <ul className="list-disc list-inside space-y-1 text-gray-300">
+            <li>I started my graduate studies at the Khoury College of Computer Sciences, Northeastern University, Boston.</li>
+            <li>I am currently purusing my Master's in Artificial Intelligence.</li>
+            <li>Courses taken include CS5010: Program Design Paradigm, CS5100: Foundations of AI, CS5180: Reinforcement Learning, and CS5800:Algorithms.</li>
+          </ul>
+        </div>
+      ),
+      type: "education",
+      icon: "📚",
       color: "indigo"
     },
     {
       id: 6,
       year: "Future",
       title: "PhD Aspirations",
-      description: "Planning PhD in AI research",
-      details: "Preparing for PhD applications with a focus on AI applications in healthcare. Interested in developing trustworthy AI systems, exploring the intersection of machine learning and medical applications.",
+      details: "I plan to pursue a PhD in AI in the near future with a focus on the heatlhcare industry. My primary interest currenlt lies in building applications for the early detection of cancer using medical imaging.",
       type: "goal",
       icon: "🚀",
       color: "yellow"
@@ -225,6 +251,30 @@ export default function Timeline() {
           )}
         </div>
       )}
+      {/* Download Resume Button */}
+      <div className="text-center mt-12 pt-8 border-t border-gray-700">
+        <div className="mb-4">
+          <p className="text-gray-400 text-sm mb-3">
+            Interested in learning more about my background and experience?
+          </p>
+        </div>
+        <a
+          href="https://drive.google.com/file/d/1QT_080lvny6EopSUkByxSgHzRS3tp2zX/view?usp=sharing"
+          download="Akhilesh_Kasturi_3yr_AIML.pdf"
+          className="inline-flex items-center gap-3 bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg border-2 border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+          <span>Download Resume</span>
+          <div className="text-xs opacity-75">PDF</div>
+        </a>
+        
+        {/* Optional: Additional context */}
+        <p className="text-gray-500 text-xs mt-3">
+          Updated {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
     </div>
   );
 }
