@@ -1,7 +1,7 @@
 import ProgressTitle from './components/ProgressTitle';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Timeline from './components/Timeline';
+import About from './components/About';
 import Projects from './components/Projects';
 import Research from './components/Research';
 import Contact from './components/Contact';
@@ -36,7 +36,7 @@ export default function App() {
       />
       <Navbar />
       <Hero />
-      <Timeline />
+      <About />
       <Projects />
       <Research />
       <Contact />

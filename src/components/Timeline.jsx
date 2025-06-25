@@ -148,7 +148,6 @@ export default function Timeline() {
     <div className="w-full max-w-6xl mx-auto p-6 mt-8 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24" id="about">
       {/* Timeline Header */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-semibold mb-4 text-center">About Me</h2>
         <p className="text-gray-400">Click on any year to explore that milestone</p>
       </div>
 

@@ -54,7 +54,7 @@ export default function Projects() {
           <h2 className="text-3xl font-semibold mb-4 text-center">
             Projects
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Exploring the frontiers of AI and machine learning through hands-on research and development
           </p>
         </div>
