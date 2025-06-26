@@ -23,18 +23,35 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission (replace with actual form handling)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        contactReason: 'collaboration'
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          'name': formData.name,
+          'email': formData.email,
+          'subject': formData.subject,
+          'message': formData.message,
+          'contact-reason': formData.contactReason
+        }).toString()
       });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          contactReason: 'collaboration'
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -105,7 +122,7 @@ export default function Contact() {
           <h2 className="text-3xl font-semibold mb-4">
             Let's Connect
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             Interested in AI research collaboration, discussing latest developments in machine learning? I'd love to hear from you.
           </p>
         </div>
