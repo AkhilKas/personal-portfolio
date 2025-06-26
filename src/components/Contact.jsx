@@ -23,35 +23,39 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // EmailJS configuration
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID; 
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      contact_reason: formData.contactReason,
+      to_email: 'akhilkas2001@gmail.com'
+    };
+    
     try {
-      // Submit to Netlify
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          'name': formData.name,
-          'email': formData.email,
-          'subject': formData.subject,
-          'message': formData.message,
-          'contact-reason': formData.contactReason
-        }).toString()
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+      
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        contactReason: 'collaboration'
       });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          contactReason: 'collaboration'
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
