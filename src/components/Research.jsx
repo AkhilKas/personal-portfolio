@@ -5,7 +5,7 @@ export default function Research() {
   const publications = [
     {
       title: "Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains",
-      authors: ["Karan Singh Bagga", "Akhilesh Kasturi", "Sonaakshi Shri Kunrarasu", "Beena B.M"],
+      authors: ["Akhilesh Kasturi", "Beena B.M"],
       venue: "Proceedings of the International Conference on Innovative Computing & Communication (ICICC 2024)",
       year: "2024",
       type: "Conference Paper",
