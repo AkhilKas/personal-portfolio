@@ -7,7 +7,7 @@ export default function Hero() {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = [
-    "am purusing my master's in AI @ Northeastern.",
+    "am pursuing my master's in AI @ Northeastern.",
     "am working on ways to detect cancer prior to it's onset.",
     "am actively looking to collaborate on research in the heathcare industry.",
     "love playing tennis during the weekends!"
