@@ -4,7 +4,7 @@ export default function ProgressTitle() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState('Hero');
 
-  const baseTitle = "🧬 Akhilesh";
+  const baseTitle = "Akhilesh";
   
   const sectionTitles = {
     'Hero': 'AI Researcher',
