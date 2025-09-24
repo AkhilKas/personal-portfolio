@@ -24,9 +24,8 @@ export default function About() {
             critical applications like healthcare and autonomous systems.
           </p>
           <p>
-            Currently, I'm preparing for <span className="text-green-400 font-medium">PhD applications</span> with 
-            a focus on AI applications in healthcare, particularly interested in the intersection of 
-            machine learning and medical applications.
+            Currently, I'm preparing for <span className="text-green-400 font-medium">Full-Time AI/ML opportunities</span> beginning Summer '26 with 
+            a focus with a focus on machine learning engineering, large language model applications, and production AI systems.
           </p>
         </div>
       </div>
