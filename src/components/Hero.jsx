@@ -8,7 +8,7 @@ export default function Hero() {
 
   const roles = [
     "am pursuing my master's in AI @ Northeastern.",
-    "am working on ways to detect cancer prior to it's onset.",
+    "am working on ways to predict the onset on cancer.",
     "am actively looking to collaborate on research in the heathcare industry.",
     "love playing tennis during the weekends!"
   ];
