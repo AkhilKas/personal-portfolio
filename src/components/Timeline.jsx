@@ -289,8 +289,8 @@ export default function Timeline() {
           </p>
         </div>
         <a
-          href="https://drive.google.com/file/d/1QT_080lvny6EopSUkByxSgHzRS3tp2zX/view?usp=sharing"
-          download="Akhilesh_Kasturi_3yr_AIML.pdf"
+          href="https://drive.google.com/file/d/1kZQJwwA91-22L1exEG6hQNksX0IU6MrX/view?usp=sharing"
+          download="Akhilesh_Kasturi.pdf"
           className="inline-flex items-center gap-3 bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg border-2 border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
