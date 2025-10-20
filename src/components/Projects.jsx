@@ -1,33 +1,33 @@
 export default function Projects() {
   const projects = [
     {
-      title: "Bird's Eye View Visualizations from NuScenes LiDAR",
-      description: "Developed advanced computer vision pipeline to transform 3D LiDAR point clouds into interpretable bird's eye view representations. Implemented semantic segmentation and object detection algorithms optimized for autonomous vehicle perception systems.",
-      technologies: ["Python", "PyTorch", "Open3D", "NumPy", "OpenCV"],
-      category: "Computer Vision",
-      status: "In Progress",
-      image: "/api/placeholder/400/250", // Placeholder for now
-      github: "#", // Replace with actual links
-      demo: "#",
+      title: "Starlink Constellation Optimization with Local Search",
+      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data, achieving optimal placement strategies that increased coverage area by 3500 sq km.",
+      technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
+      category: "Artificial Intelligence",
+      status: "Completed",
+      image: "/api/placeholder/400/250",
+      github: "https://github.com/CS-5100/Satellite",
+      demo: null, // No demo available
       highlights: [
-        "Multi-sensor fusion with camera and radar data",
-        "Real-time processing pipeline achieving 30+ FPS",
-        "Custom loss functions for depth estimation accuracy"
+        "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit",
+        "Achieved 3500 sq km additional coverage using Hill Climbing and Simulated Annealing algorithms",
+        "Optimized geographic transformations and spatial data processing with custom CRS projections"
       ]
     },
     {
-      title: "DepthAnything-based Multi-frame Depth Estimation",
-      description: "Enhanced monocular depth estimation by leveraging temporal consistency across video frames. Built upon DepthAnything foundation model with custom architectural improvements for robust depth prediction in dynamic scenes.",
-      technologies: ["PyTorch", "Transformers", "CUDA", "OpenCV", "Matplotlib"],
-      category: "Deep Learning",
+      title: "PPO Ablation Study for No-Limit Texas Hold'em",
+      description: "Conducted comprehensive ablation study comparing PPO-Clip and PPO-KL algorithms for poker gameplay using RLCard environment. Developed rich state representation with domain-specific reward shaping and self-play training framework to create increasingly sophisticated opponents, revealing distinct learning dynamics between constraint mechanisms.",
+      technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
+      category: "Reinforcement Learning",
       status: "Completed",
       image: "/api/placeholder/400/250",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
+      demo: null,
       highlights: [
-        "40% improvement in depth accuracy over baseline",
-        "Novel temporal attention mechanism",
-        "Optimized for edge deployment with TensorRT"
+        "PPO-KL achieved stable exploitative strategy with high win rate in imperfect-information game environments",
+        "PPO-Clip demonstrated diverse strategy exploration with higher reward peaks but lower consistency",
+        "Implemented self-play curriculum learning framework for training against progressively challenging opponents"
       ]
     },
     {
@@ -71,6 +71,7 @@ export default function Projects() {
                   {project.category === 'Computer Vision' && '👁️'}
                   {project.category === 'Deep Learning' && '🧠'}
                   {project.category === 'Audio ML' && '🎵'}
+                  {project.category === 'Reinforcement Learning' && '🎰'}
                 </div>
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-blue-600/90 text-white text-sm rounded-full font-medium">
@@ -126,25 +127,27 @@ export default function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className={`flex gap-3 ${project.demo ? '' : 'justify-center'}`}>
                   <a
                     href={project.github}
-                    className="flex-1 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2"
+                    className={`${project.demo ? 'flex-1' : 'flex-1 max-w-xs'} bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2`}
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
                     </svg>
                     Code
                   </a>
-                  <a
-                    href={project.demo}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                    Demo
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                      </svg>
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
