@@ -2,17 +2,16 @@ export default function Projects() {
   const projects = [
     {
       title: "Starlink Constellation Optimization with Local Search",
-      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data, achieving optimal placement strategies that increased coverage area by 3500 sq km.",
+      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data.",
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
       status: "Completed",
-      image: "/public/satellite.png",
+      image: "./satellite.png",
       github: "https://github.com/CS-5100/Satellite",
       demo: null, // No demo available
       highlights: [
         "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit",
-        "Achieved 3500 sq km additional coverage using Hill Climbing and Simulated Annealing algorithms",
-        "Optimized geographic transformations and spatial data processing with custom CRS projections"
+        "Achieved 3% additional coverage using Hill Climbing and Simulated Annealing algorithms"
       ]
     },
     {
@@ -21,7 +20,7 @@ export default function Projects() {
       technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
       category: "Reinforcement Learning",
       status: "Completed",
-      image: "/public/poker.jpg",
+      image: "./poker.jpg",
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
       demo: null,
       highlights: [
