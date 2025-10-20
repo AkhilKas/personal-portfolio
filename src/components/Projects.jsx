@@ -2,7 +2,7 @@ export default function Projects() {
   const projects = [
     {
       title: "Starlink Constellation Optimization with Local Search",
-      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data, achieving optimal placement strategies that increased coverage area by 3500 sq km.",
+      description: "Low Earth Orbit (LEO) satellites operate at altitudes between 100-1,200 miles above Earth's surface, enabling global communications with reduced signal latency and higher data transfer speeds compared to traditional satellites. However, these satellites face certain limitations - their relatively short operational lifespan of approximately 7-10 years, requiring frequent replacements to maintain network coverage. This project addresses the optimization of satellite placement in the Starlink constellation to achieve maximum area coverage.",
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
       status: "Completed",
@@ -10,14 +10,14 @@ export default function Projects() {
       github: "https://github.com/CS-5100/Satellite",
       demo: null,
       highlights: [
-        "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit",
-        "Achieved 3500 sq km additional coverage using Hill Climbing and Simulated Annealing algorithms",
-        "Optimized geographic transformations and spatial data processing with custom CRS projections"
+        "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit.",
+        "Achieved 3% additional global coverage using Hill Climbing and Simulated Annealing algorithms.",
+        "Optimized geographic transformations and spatial data processing with custom CRS projections."
       ]
     },
     {
       title: "PPO Ablation Study for No-Limit Texas Hold'em",
-      description: "Conducted comprehensive ablation study comparing PPO-Clip and PPO-KL algorithms for poker gameplay using RLCard environment. Developed rich state representation with domain-specific reward shaping and self-play training framework to create increasingly sophisticated opponents, revealing distinct learning dynamics between constraint mechanisms.",
+      description: "No-Limit Texas Hold'em is a poker variant where players combine two private cards with five community cards to form the best hand, with no cap on bet sizes during any betting round. This imperfect-information game presents unique challenges for AI systems, requiring agents to balance exploitation and exploration while adapting to opponent strategies without complete knowledge of the game state. This project conducts an ablation study comparing two Proximal Policy Optimization (PPO) variants—PPO-Clip and PPO-KL—to understand how different constraint mechanisms shape learning dynamics and strategic behavior in complex poker environments.",
       technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
       category: "Reinforcement Learning",
       status: "Completed",
