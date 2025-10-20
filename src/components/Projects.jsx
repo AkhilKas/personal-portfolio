@@ -6,7 +6,7 @@ export default function Projects() {
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
       status: "Completed",
-      image: "/api/placeholder/400/250",
+      image: "https://satellitemap.space/",
       github: "https://github.com/CS-5100/Satellite",
       demo: null, // No demo available
       highlights: [
@@ -21,7 +21,7 @@ export default function Projects() {
       technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
       category: "Reinforcement Learning",
       status: "Completed",
-      image: "/api/placeholder/400/250",
+      image: "https://unsplash.com/photos/heart-shape-red-heart-on-white-and-black-textile-IU4UKIfPqEQ",
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
       demo: null,
       highlights: [
