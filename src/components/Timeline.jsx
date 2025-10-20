@@ -61,7 +61,7 @@ export default function Timeline() {
       title: "Paper Publication",
       details: "I co-authored a paper on Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains which was presented at the International Conference on Innovative Computing & Communication (ICICC) 2024.",
       type: "research",
-      icon: "📚",
+      icon: "📄",
       color: "green"
     },
     {
@@ -83,13 +83,30 @@ export default function Timeline() {
     },
     {
       id: 6,
-      year: "Future",
-      title: "PhD Aspirations",
-      details: "I plan to pursue a PhD in AI in the near future with a focus on the healthcare industry. My primary interest currently lies in building applications for the early detection of cancer using medical imaging.",
-      type: "goal",
+      year: "Jun '25",
+      title: "AI Intern",
+      details: (
+        <div>
+          <ul className="list-disc list-inside space-y-1 text-gray-300">
+            <li>I joined CognitiveHealth Solutions.</li>
+            <li>I built production-ready OCR system with secure API management, cross-platform deployment, and automated testing.</li>
+            <li>I reduced healthcare document processing time by 95% through LLM-based n8n pipeline with advanced prompt engineering.</li>
+          </ul>
+        </div>
+      ),
+      type: "work",
       icon: "🚀",
-      color: "yellow"
-    }
+      color: "teal"
+    },
+    {
+      id: 7,
+      year: "Sep '25",
+      title: "Teaching Assistant",
+      details: "As a Graduate Teaching Assistant at Northeastern, I work with over 40 undergrads each week, helping them tackle discrete math concepts like graph theory and combinatorics.",
+      type: "work",
+      icon: "🧠",
+      color: "amber"
+    },
   ];
 
   const getColorClasses = (color, isSelected = false) => {
@@ -135,6 +152,20 @@ export default function Timeline() {
         border: 'border-yellow-500',
         hover: 'hover:bg-yellow-500',
         ring: 'ring-yellow-400'
+      },
+      teal: {
+        bg: isSelected ? 'bg-teal-500' : 'bg-teal-600',
+        text: 'text-teal-400',
+        border: 'border-teal-500',
+        hover: 'hover:bg-teal-500',
+        ring: 'ring-teal-400'
+      },
+      amber: {
+        bg: isSelected ? 'bg-amber-500' : 'bg-amber-600',
+        text: 'text-amber-400',
+        border: 'border-amber-500',
+        hover: 'hover:bg-amber-500',
+        ring: 'ring-amber-400'
       }
     };
     return colors[color] || colors.blue;
