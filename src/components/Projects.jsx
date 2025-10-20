@@ -2,16 +2,17 @@ export default function Projects() {
   const projects = [
     {
       title: "Starlink Constellation Optimization with Local Search",
-      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data.",
+      description: "Developed optimization algorithms to efficiently place satellites in the Starlink constellation for maximum area coverage. Implemented Hill Climbing and Simulated Annealing algorithms to analyze 6000+ satellites using Two-Line Element (TLE) data, achieving optimal placement strategies that increased coverage area by 3500 sq km.",
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
       status: "Completed",
-      image: "./satellite.png",
+      image: "/satellite.png",
       github: "https://github.com/CS-5100/Satellite",
-      demo: null, // No demo available
+      demo: null,
       highlights: [
         "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit",
-        "Achieved 3% additional coverage using Hill Climbing and Simulated Annealing algorithms"
+        "Achieved 3500 sq km additional coverage using Hill Climbing and Simulated Annealing algorithms",
+        "Optimized geographic transformations and spatial data processing with custom CRS projections"
       ]
     },
     {
@@ -20,7 +21,7 @@ export default function Projects() {
       technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
       category: "Reinforcement Learning",
       status: "Completed",
-      image: "./poker.jpg",
+      image: "/poker.jpg",
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
       demo: null,
       highlights: [
@@ -65,20 +66,34 @@ export default function Projects() {
               className="group bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 hover:border-blue-500/50"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden h-48 bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
-                <div className="text-4xl text-blue-400/30">
-                  {project.category === 'Computer Vision' && '👁️'}
-                  {project.category === 'Deep Learning' && '🧠'}
-                  {project.category === 'Audio ML' && '🎵'}
-                  {project.category === 'Reinforcement Learning' && '🎰'}
-                </div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-blue-600/90 text-white text-sm rounded-full font-medium">
+              <div className="relative overflow-hidden h-48">
+                {project.image && !project.image.includes('placeholder') ? (
+                  <>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-gray-800/90"></div>
+                  </>
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
+                    <div className="text-4xl text-blue-400/30">
+                      {project.category === 'Computer Vision' && '👁️'}
+                      {project.category === 'Deep Learning' && '🧠'}
+                      {project.category === 'Audio ML' && '🎵'}
+                      {project.category === 'Artificial Intelligence' && '🛰️'}
+                      {project.category === 'Reinforcement Learning' && '🎰'}
+                    </div>
+                  </div>
+                )}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="px-3 py-1 bg-blue-600/90 text-white text-sm rounded-full font-medium backdrop-blur-sm">
                     {project.category}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 text-xs rounded-full font-medium ${
+                <div className="absolute top-4 right-4 z-10">
+                  <span className={`px-3 py-1 text-xs rounded-full font-medium backdrop-blur-sm ${
                     project.status === 'Completed' 
                       ? 'bg-green-600/90 text-white' 
                       : 'bg-yellow-600/90 text-white'
