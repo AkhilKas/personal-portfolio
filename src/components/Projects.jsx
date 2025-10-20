@@ -103,7 +103,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                {/* Key Highlights */}
+                {/* Key Highlights
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-400 mb-2">Key Achievements:</h4>
                   <ul className="space-y-1">
@@ -114,7 +114,7 @@ export default function Projects() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
 
                 {/* Technologies */}
                 <div className="mb-6">
