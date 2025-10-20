@@ -20,21 +20,21 @@ export default function Projects() {
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
       demo: null
     },
-    {
-      title: "Voice-based Age and Gender Classification",
-      description: "Implemented multi-task deep learning model for simultaneous age and gender prediction from audio signals. Applied advanced signal processing techniques and transformer architectures for robust acoustic feature extraction.",
-      technologies: ["TensorFlow", "Librosa", "Scikit-learn", "Pandas", "Streamlit"],
-      category: "Audio ML",
-      status: "Completed",
-      image: "/api/placeholder/400/250",
-      github: "#",
-      demo: "#",
-      highlights: [
-        "91% accuracy on age classification",
-        "95% accuracy on gender classification",
-        "Real-time inference with web interface"
-      ]
-    }
+    // {
+    //   title: "Voice-based Age and Gender Classification",
+    //   description: "Implemented multi-task deep learning model for simultaneous age and gender prediction from audio signals. Applied advanced signal processing techniques and transformer architectures for robust acoustic feature extraction.",
+    //   technologies: ["TensorFlow", "Librosa", "Scikit-learn", "Pandas", "Streamlit"],
+    //   category: "Audio ML",
+    //   status: "Completed",
+    //   image: "/api/placeholder/400/250",
+    //   github: "#",
+    //   demo: "#",
+    //   highlights: [
+    //     "91% accuracy on age classification",
+    //     "95% accuracy on gender classification",
+    //     "Real-time inference with web interface"
+    //   ]
+    // }
   ];
 
   return (
