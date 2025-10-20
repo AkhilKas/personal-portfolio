@@ -2,18 +2,13 @@ export default function Projects() {
   const projects = [
     {
       title: "Starlink Constellation Optimization with Local Search",
-      description: "Low Earth Orbit (LEO) satellites operate at altitudes between 100-1,200 miles above Earth's surface, enabling global communications with reduced signal latency and higher data transfer speeds compared to traditional satellites. However, these satellites face certain limitations - their relatively short operational lifespan of approximately 7-10 years, requiring frequent replacements to maintain network coverage. This project addresses the optimization of satellite placement in the Starlink constellation to achieve maximum area coverage.",
+      description: "Low Earth Orbit (LEO) satellites enable global communications with reduced signal latency and higher data transfer speeds compared to traditional satellites. However, these satellites face certain limitations - their relatively short operational lifespan of approximately 7-10 years, requiring frequent replacements to maintain network coverage. The SpaceX Starlink network is currently the most extensive and technologically advanced satellite constellation in low earth orbit, offering high-speed, low-latency broadband internet worldwide. This project addresses the optimization of satellite placement in the Starlink constellation to achieve maximum area coverage.",
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
       status: "Completed",
       image: "/satellite.png",
       github: "https://github.com/CS-5100/Satellite",
-      demo: null,
-      highlights: [
-        "Processed TLE data from CelesTrak API to model 6000+ existing Starlink satellites in Low Earth Orbit.",
-        "Achieved 3% additional global coverage using Hill Climbing and Simulated Annealing algorithms.",
-        "Optimized geographic transformations and spatial data processing with custom CRS projections."
-      ]
+      demo: null
     },
     {
       title: "PPO Ablation Study for No-Limit Texas Hold'em",
@@ -23,12 +18,7 @@ export default function Projects() {
       status: "Completed",
       image: "/poker.jpg",
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
-      demo: null,
-      highlights: [
-        "PPO-KL achieved stable exploitative strategy with high win rate in imperfect-information game environments",
-        "PPO-Clip demonstrated diverse strategy exploration with higher reward peaks but lower consistency",
-        "Implemented self-play curriculum learning framework for training against progressively challenging opponents"
-      ]
+      demo: null
     },
     {
       title: "Voice-based Age and Gender Classification",
