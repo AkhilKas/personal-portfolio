@@ -58,7 +58,7 @@ export default function Timeline() {
     {
       id: 4,
       year: "Apr '24",
-      title: "Paper Publication",
+      title: "Publication",
       details: "I co-authored a paper on Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains which was presented at the International Conference on Innovative Computing & Communication (ICICC) 2024.",
       type: "research",
       icon: "📄",
@@ -101,7 +101,7 @@ export default function Timeline() {
     {
       id: 7,
       year: "Sep '25",
-      title: "Teaching Assistant",
+      title: "TA",
       details: "As a Graduate Teaching Assistant at Northeastern, I work with over 40 undergrads each week, helping them tackle discrete math concepts like graph theory and combinatorics.",
       type: "work",
       icon: "🧠",
