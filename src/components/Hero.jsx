@@ -43,7 +43,7 @@ export default function Hero() {
   }, [currentText, isDeleting, currentRoleIndex, typingSpeed, roles]);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center p-10 pt-32 scroll-mt-20 relative overflow-hidden" id="hero">
+    <section className="min-h-screen flex flex-col justify-center items-center p-4 sm:p-10 pt-32 scroll-mt-20 relative overflow-hidden w-full" id="hero">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating Mathematical Symbols */}
@@ -170,14 +170,14 @@ export default function Hero() {
       </div>
 
       {/* Name */}
-      <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-center px-4">
         <span className="text-gray-300 mr-2">
           Akhilesh Kasturi
         </span>
       </h1>
 
       {/* Typewriter Effect */}
-      <div className="text-xl md:text-2xl text-center mb-8 h-16 flex items-center">
+      <div className="text-lg sm:text-xl md:text-2xl text-center mb-8 h-16 flex items-center px-4 max-w-full">
         <span className="text-gray-300 mr-2">I </span>
         <span className="text-gray-300 mr-2">
           {currentText}

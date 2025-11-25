@@ -176,19 +176,19 @@ export default function Timeline() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6 mt-8 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24" id="about">
+    <div className="w-full max-w-6xl mx-auto p-6 mt-8 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 overflow-x-hidden" id="about">
       {/* Timeline Header */}
       <div className="text-center mb-8">
         <p className="text-gray-400">Click on any year to explore that milestone</p>
       </div>
 
       {/* Horizontal Timeline */}
-      <div className="relative mb-8">
+      <div className="relative mb-8 overflow-x-auto px-4">
         {/* Timeline Line */}
         <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-600 transform -translate-y-1/2"></div>
         
         {/* Timeline Points */}
-        <div className="flex justify-between items-center relative">
+        <div className="flex justify-between items-center relative min-w-max md:min-w-0">
           {timelineData.map((milestone, index) => (
             <div key={milestone.id} className="flex flex-col items-center group">
               {/* Year Label */}
