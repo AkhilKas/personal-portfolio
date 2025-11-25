@@ -5,7 +5,6 @@ export default function Projects() {
       description: "Low Earth Orbit (LEO) satellites enable global communications with reduced signal latency and higher data transfer speeds compared to traditional satellites. However, these satellites face certain limitations - their relatively short operational lifespan of approximately 7-10 years, requiring frequent replacements to maintain network coverage. The SpaceX Starlink network is currently the most extensive and technologically advanced satellite constellation in low earth orbit, offering high-speed, low-latency broadband internet worldwide. This project addresses the optimization of satellite placement in the Starlink constellation to achieve maximum area coverage.",
       technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
       category: "Artificial Intelligence",
-      status: "Completed",
       image: "/satellite.png",
       github: "https://github.com/CS-5100/Satellite",
       demo: null
@@ -15,7 +14,6 @@ export default function Projects() {
       description: "No-Limit Texas Hold'em is a poker variant where players combine two private cards with five community cards to form the best hand, with no cap on bet sizes during any betting round. This imperfect-information game presents unique challenges for AI systems, requiring agents to balance exploitation and exploration while adapting to opponent strategies without complete knowledge of the game state. This project conducts an ablation study comparing two Proximal Policy Optimization (PPO) variants—PPO-Clip and PPO-KL—to understand how different constraint mechanisms shape learning dynamics and strategic behavior in complex poker environments.",
       technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
       category: "Reinforcement Learning",
-      status: "Completed",
       image: "/poker.jpg",
       github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
       demo: null
@@ -80,15 +78,6 @@ export default function Projects() {
                 <div className="absolute top-4 left-4 z-10">
                   <span className="px-3 py-1 bg-blue-600/90 text-white text-sm rounded-full font-medium backdrop-blur-sm">
                     {project.category}
-                  </span>
-                </div>
-                <div className="absolute top-4 right-4 z-10">
-                  <span className={`px-3 py-1 text-xs rounded-full font-medium backdrop-blur-sm ${
-                    project.status === 'Completed' 
-                      ? 'bg-green-600/90 text-white' 
-                      : 'bg-yellow-600/90 text-white'
-                  }`}>
-                    {project.status}
                   </span>
                 </div>
               </div>
