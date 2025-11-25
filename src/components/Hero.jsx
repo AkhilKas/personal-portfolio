@@ -4,7 +4,7 @@ export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [typingSpeed, setTypingSpeed] = useState(50);
 
   const roles = [
     "am pursuing my master's in AI @ Northeastern.",
@@ -20,17 +20,17 @@ export default function Hero() {
       if (isDeleting) {
         // Deleting text
         setCurrentText(currentRole.substring(0, currentText.length - 1));
-        setTypingSpeed(75); // Faster deletion
+        setTypingSpeed(25); // Faster deletion
       } else {
         // Typing text
         setCurrentText(currentRole.substring(0, currentText.length + 1));
-        setTypingSpeed(150); // Normal typing speed
+        setTypingSpeed(50); // Normal typing speed
       }
 
       // Check if word is complete
       if (!isDeleting && currentText === currentRole) {
         // Pause at end of word
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 1000);
       } else if (isDeleting && currentText === '') {
         // Move to next word
         setIsDeleting(false);
