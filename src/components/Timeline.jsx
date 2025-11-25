@@ -188,9 +188,9 @@ export default function Timeline() {
         <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-600 transform -translate-y-1/2"></div>
         
         {/* Timeline Points */}
-        <div className="flex justify-between items-center relative min-w-max md:min-w-0">
+        <div className="flex justify-start md:justify-between items-center relative min-w-max md:min-w-0 gap-8 md:gap-0">
           {timelineData.map((milestone, index) => (
-            <div key={milestone.id} className="flex flex-col items-center group">
+            <div key={milestone.id} className="flex flex-col items-center group flex-shrink-0">
               {/* Year Label */}
               <div className={`text-xs font-medium mb-2 transition-colors ${
                 selectedMilestone?.id === milestone.id 

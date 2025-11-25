@@ -296,14 +296,14 @@ export default function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center p-4 rounded-lg border border-gray-600 hover:border-gray-500 transition-all duration-300 group ${link.color}`}
+                    className={`flex items-center p-4 rounded-lg border border-gray-600 hover:border-gray-500 transition-all duration-300 group ${link.color} overflow-hidden`}
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center group-hover:bg-gray-600 transition-colors">
                       {link.icon}
                     </div>
-                    <div className="ml-4">
+                    <div className="ml-4 flex-1 min-w-0">
                       <p className="text-white font-medium">{link.name}</p>
-                      <p className="text-gray-400 text-sm">{link.value}</p>
+                      <p className="text-gray-400 text-sm break-all">{link.value}</p>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
                       <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
