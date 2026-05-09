@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "flowbite";
 
+@custom-variant dark (&:is(.dark *));
+@custom-variant light (&:is(.light *));
+
 html {
   scroll-behavior: smooth;
 }

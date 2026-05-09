@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function Research() {
 
   const publications = [
@@ -13,11 +11,7 @@ export default function Research() {
       keywords: ["Blockchain", "Consensus Mechanism", "Healthcare", "Proof-of-Trust", "Consortium Blockchain", "Trust Management"],
       ssrnId: "4804243",
       status: "Published",
-      metrics: {
-        downloads: "50+",
-        citations: "1",
-        views: "300+"
-      },
+      metrics: { downloads: "50+", citations: "1", views: "300+" },
       links: {
         ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4804243",
         pdf: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4804243"
@@ -48,109 +42,90 @@ export default function Research() {
 
   const getMetricColor = (type) => {
     switch (type) {
-      case 'downloads': return 'text-blue-400';
-      case 'citations': return 'text-green-400';
-      case 'views': return 'text-purple-400';
-      default: return 'text-gray-400';
+      case 'downloads': return 'text-blue-400 dark:text-blue-400 light:text-blue-600';
+      case 'citations': return 'text-green-400 dark:text-green-400 light:text-green-600';
+      case 'views': return 'text-purple-400 dark:text-purple-400 light:text-purple-600';
+      default: return 'text-gray-400 dark:text-gray-400 light:text-gray-500';
     }
   };
 
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24" id="research">
+    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-900 dark:bg-gray-900 light:bg-white" id="research">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4 text-white dark:text-white light:text-gray-900">
             Research & Publications
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            Exploring the frontiers of artificial intelligence through rigorous research, 
+          <p className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
+            Exploring the frontiers of artificial intelligence through rigorous research,
             with focus on machine learning, computer vision, and practical AI applications.
           </p>
         </div>
 
         {/* Published Research */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-white flex items-center">
-            <svg className="w-6 h-6 mr-3 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+          <h3 className="text-2xl font-semibold mb-8 text-white dark:text-white light:text-gray-900 flex items-center">
+            <svg className="w-6 h-6 mr-3 text-green-400 dark:text-green-400 light:text-green-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h8a1 1 0 100-2H5z" clipRule="evenodd" />
             </svg>
             Published Research
           </h3>
 
           {publications.map((paper, index) => (
-            <div key={index} className="bg-gray-800 rounded-xl p-8 border border-gray-700 shadow-lg mb-8">
-              {/* Paper Header */}
+            <div key={index} className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm mb-8">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div className="flex-1">
                   <div className="flex items-center mb-2">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${
-                      paper.status === 'Published' 
-                        ? 'bg-green-600/20 text-green-400 border border-green-600/30' 
-                        : 'bg-yellow-600/20 text-yellow-400 border border-yellow-600/30'
+                      paper.status === 'Published'
+                        ? 'bg-green-600/20 dark:bg-green-600/20 light:bg-green-100 text-green-400 dark:text-green-400 light:text-green-700 border border-green-600/30 dark:border-green-600/30 light:border-green-300'
+                        : 'bg-yellow-600/20 dark:bg-yellow-600/20 light:bg-yellow-100 text-yellow-400 dark:text-yellow-400 light:text-yellow-700 border border-yellow-600/30 dark:border-yellow-600/30 light:border-yellow-300'
                     }`}>
                       {paper.status}
                     </span>
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 border border-blue-600/30 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 text-blue-400 dark:text-blue-400 light:text-blue-700 border border-blue-600/30 dark:border-blue-600/30 light:border-blue-300 rounded-full text-xs font-medium">
                       {paper.type}
                     </span>
                   </div>
-                  
-                  <h4 className="text-xl font-bold text-white mb-2 leading-tight">
+
+                  <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900 mb-2 leading-tight">
                     {paper.title}
                   </h4>
-                  
-                  <div className="text-gray-300 mb-2">
+                  <div className="text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">
                     <span className="font-medium">{paper.authors.join(", ")}</span>
                   </div>
-                  
-                  <div className="text-gray-400 text-sm">
+                  <div className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-sm">
                     <span className="font-medium">{paper.venue}</span> • {paper.year}
-                    {paper.ssrnId && (
-                      <span className="ml-2">• SSRN ID: {paper.ssrnId}</span>
-                    )}
+                    {paper.ssrnId && <span className="ml-2">• SSRN ID: {paper.ssrnId}</span>}
                   </div>
                 </div>
 
-                {/* Metrics */}
                 <div className="flex mt-4 md:mt-0 md:ml-6 space-x-6">
                   {Object.entries(paper.metrics).map(([key, value]) => (
                     <div key={key} className="text-center">
-                      <div className={`text-lg font-bold ${getMetricColor(key)}`}>
-                        {value}
-                      </div>
-                      <div className="text-xs text-gray-400 capitalize">
-                        {key}
-                      </div>
+                      <div className={`text-lg font-bold ${getMetricColor(key)}`}>{value}</div>
+                      <div className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-500 capitalize">{key}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Abstract */}
               <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-400 mb-2">ABSTRACT</h5>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {paper.abstract}
-                </p>
+                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-400 light:text-gray-500 mb-2">ABSTRACT</h5>
+                <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-sm leading-relaxed">{paper.abstract}</p>
               </div>
 
-              {/* Keywords */}
               <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-400 mb-2">KEYWORDS</h5>
+                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-400 light:text-gray-500 mb-2">KEYWORDS</h5>
                 <div className="flex flex-wrap gap-2">
                   {paper.keywords.map((keyword, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-md font-medium"
-                    >
+                    <span key={idx} className="px-2 py-1 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 text-gray-300 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium">
                       {keyword}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Links */}
               <div className="flex flex-wrap gap-3">
                 <a
                   href={paper.links.ssrn}
@@ -163,20 +138,16 @@ export default function Research() {
                   </svg>
                   View on SSRN
                 </a>
-
-                <button 
+                <button
                   onClick={() => {
                     const citation = "Bagga, Karan Singh and Kasturi, Akhilesh and Kunrarasu, Sonaakshi Shri and B.M, Beena, Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains (April 23, 2024). Proceedings of the International Conference on Innovative Computing & Communication (ICICC 2024), Available at SSRN: https://ssrn.com/abstract=4804243 or http://dx.doi.org/10.2139/ssrn.4804243";
                     navigator.clipboard.writeText(citation);
-                    // Optional: Show a brief success message
                     const button = event.target.closest('button');
                     const originalText = button.innerHTML;
                     button.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Copied!';
-                    setTimeout(() => {
-                      button.innerHTML = originalText;
-                    }, 2000);
+                    setTimeout(() => { button.innerHTML = originalText; }, 2000);
                   }}
-                  className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors"
+                  className="flex items-center gap-2 bg-gray-700 dark:bg-gray-700 light:bg-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-300 text-white dark:text-white light:text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition-colors"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
@@ -187,27 +158,25 @@ export default function Research() {
             </div>
           ))}
         </div>
-        </div>  
 
         {/* Research Areas */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-white flex items-center">
-            <svg className="w-6 h-6 mr-3 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <h3 className="text-2xl font-semibold mb-8 text-white dark:text-white light:text-gray-900 flex items-center">
+            <svg className="w-6 h-6 mr-3 text-purple-400 dark:text-purple-400 light:text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             Research Areas
           </h3>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {researchAreas.map((area, index) => (
-              <div key={index} className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
+              <div key={index} className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-6 border border-gray-700 dark:border-gray-700 light:border-gray-200 hover:border-gray-600 dark:hover:border-gray-600 light:hover:border-gray-300 shadow-none dark:shadow-none light:shadow-sm hover:shadow-md transition-all">
                 <div className="text-3xl mb-4">{area.icon}</div>
-                <h4 className="text-xl font-semibold text-white mb-3">{area.title}</h4>
-                <p className="text-gray-300 text-sm mb-4">{area.description}</p>
+                <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">{area.title}</h4>
+                <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4">{area.description}</p>
                 <div className="space-y-2">
                   {area.projects.map((project, idx) => (
-                    <div key={idx} className="text-xs text-gray-400 flex items-center">
-                      <span className="w-1 h-1 bg-blue-400 rounded-full mr-2"></span>
+                    <div key={idx} className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-500 flex items-center">
+                      <span className="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>
                       {project}
                     </div>
                   ))}
@@ -216,6 +185,7 @@ export default function Research() {
             ))}
           </div>
         </div>
+      </div>
     </section>
   );
 }
