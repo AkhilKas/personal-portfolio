@@ -9,15 +9,14 @@ import { describe, it, expect, vi } from 'vitest';
 vi.mock('@emailjs/browser', () => ({ default: { send: vi.fn() } }));
 vi.mock('react-ga4', () => ({ default: { initialize: vi.fn(), send: vi.fn() } }));
 
-const REQUIRED_SECTIONS = ['hero', 'about', 'projects', 'research', 'contact'];
+const REQUIRED_SECTIONS = ['hero', 'about', 'experience', 'projects', 'research', 'contact'];
 
-const NAVBAR_SECTION_IDS = ['hero', 'about', 'projects', 'research', 'contact'];
+const NAVBAR_SECTION_IDS = ['hero', 'about', 'experience', 'projects', 'research', 'contact'];
 
 describe('Section IDs', () => {
   it('Navbar sections array matches required section IDs', async () => {
-    // Import Navbar and pull its sections list without rendering
     const { default: Navbar } = await import('../components/Navbar');
-    const { render: r, screen } = await import('@testing-library/react');
+    const { render: r } = await import('@testing-library/react');
     r(<Navbar isDark={false} onToggle={() => {}} />);
 
     for (const id of NAVBAR_SECTION_IDS) {
@@ -36,6 +35,12 @@ describe('Section IDs', () => {
     const { default: About } = await import('../components/About');
     const { container } = render(<About />);
     expect(container.querySelector('#about')).toBeTruthy();
+  });
+
+  it('Experience renders with id="experience"', async () => {
+    const { default: Experience } = await import('../components/Experience');
+    const { container } = render(<Experience />);
+    expect(container.querySelector('#experience')).toBeTruthy();
   });
 
   it('Projects renders with id="projects"', async () => {

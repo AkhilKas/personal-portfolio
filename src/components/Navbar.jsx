@@ -6,7 +6,7 @@ export default function Navbar({ isDark, onToggle }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sectionIds = ['hero', 'about', 'projects', 'research', 'contact'];
+      const sectionIds = ['hero', 'about', 'experience', 'projects', 'research', 'contact'];
       let current = activeSection;
 
       for (const id of sectionIds) {
@@ -30,6 +30,7 @@ export default function Navbar({ isDark, onToggle }) {
   const sections = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'research', label: 'Research' },
     { id: 'contact', label: 'Contact' },

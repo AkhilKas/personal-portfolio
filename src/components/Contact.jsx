@@ -103,10 +103,10 @@ export default function Contact() {
   ];
 
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-900 dark:bg-gray-900 light:bg-gray-50" id="contact">
+    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-50 dark:bg-gray-900 light:bg-gray-50" id="contact">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-semibold mb-4 text-white dark:text-white light:text-gray-900">
+          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">
             Let's Connect
           </h2>
           <p className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
@@ -116,12 +116,12 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
-            <h3 className="text-2xl font-semibold mb-6 text-white dark:text-white light:text-gray-900">Send a Message</h3>
+          <div className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
+            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white light:text-gray-900">Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 dark:text-gray-300 light:text-gray-700 mb-3">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 light:text-gray-700 mb-3">
                   What would you like to discuss?
                 </label>
                 <div className="grid grid-cols-2 gap-3">
@@ -131,7 +131,7 @@ export default function Contact() {
                       className={`flex items-center p-3 rounded-lg border cursor-pointer transition-all ${
                         formData.contactReason === reason.value
                           ? 'border-blue-500 bg-blue-500/10 dark:bg-blue-500/10 light:bg-blue-50 text-blue-400 dark:text-blue-400 light:text-blue-600'
-                          : 'border-gray-600 dark:border-gray-600 light:border-gray-300 hover:border-gray-500 dark:hover:border-gray-500 light:hover:border-gray-400 text-gray-300 dark:text-gray-300 light:text-gray-700'
+                          : 'border-gray-300 dark:border-gray-600 light:border-gray-300 hover:border-gray-500 dark:hover:border-gray-500 light:hover:border-gray-400 text-gray-700 dark:text-gray-300 light:text-gray-700'
                       }`}
                     >
                       <input type="radio" name="contactReason" value={reason.value} checked={formData.contactReason === reason.value} onChange={handleInputChange} className="sr-only" />
@@ -144,37 +144,37 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">Name</label>
                   <input
                     type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required
-                    className="w-full px-4 py-3 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 border border-gray-600 dark:border-gray-600 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 border border-gray-300 dark:border-gray-600 light:border-gray-300 rounded-lg text-gray-900 dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">Email</label>
                   <input
                     type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required
-                    className="w-full px-4 py-3 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 border border-gray-600 dark:border-gray-600 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 border border-gray-300 dark:border-gray-600 light:border-gray-300 rounded-lg text-gray-900 dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">Subject</label>
                 <input
                   type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} required
-                  className="w-full px-4 py-3 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 border border-gray-600 dark:border-gray-600 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 border border-gray-300 dark:border-gray-600 light:border-gray-300 rounded-lg text-gray-900 dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                   placeholder="Brief subject line"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">Message</label>
                 <textarea
                   id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5}
-                  className="w-full px-4 py-3 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 border border-gray-600 dark:border-gray-600 light:border-gray-300 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 border border-gray-300 dark:border-gray-600 light:border-gray-300 rounded-lg text-gray-900 dark:text-white light:text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
                   placeholder="Tell me about your research interests, collaboration ideas, or any questions you have..."
                 />
               </div>
@@ -226,8 +226,8 @@ export default function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
-              <h3 className="text-2xl font-semibold mb-6 text-white dark:text-white light:text-gray-900">Get in Touch</h3>
+            <div className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white light:text-gray-900">Get in Touch</h3>
               <div className="space-y-4">
                 {socialLinks.map((link) => (
                   <a
@@ -237,11 +237,11 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className={`flex items-center p-4 rounded-lg border border-gray-600 dark:border-gray-600 light:border-gray-200 hover:border-gray-500 dark:hover:border-gray-500 light:hover:border-gray-300 hover:shadow-sm transition-all duration-300 group ${link.color} overflow-hidden`}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-600 dark:group-hover:bg-gray-600 light:group-hover:bg-gray-200 transition-colors text-gray-300 dark:text-gray-300 light:text-gray-600">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-600 dark:group-hover:bg-gray-600 light:group-hover:bg-gray-200 transition-colors text-gray-300 dark:text-gray-300 light:text-gray-600">
                       {link.icon}
                     </div>
                     <div className="ml-4 flex-1 min-w-0">
-                      <p className="text-white dark:text-white light:text-gray-900 font-medium">{link.name}</p>
+                      <p className="text-gray-900 dark:text-white light:text-gray-900 font-medium">{link.name}</p>
                       <p className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-sm break-all">{link.value}</p>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
@@ -254,9 +254,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-white dark:text-white light:text-gray-900">Availability</h3>
-              <div className="space-y-3 text-gray-300 dark:text-gray-300 light:text-gray-700">
+            <div className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">Availability</h3>
+              <div className="space-y-3 text-gray-700 dark:text-gray-300 light:text-gray-700">
                 <div className="flex items-center">
                   <svg className="w-5 h-5 text-blue-400 dark:text-blue-400 light:text-blue-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />

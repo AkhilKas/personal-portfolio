@@ -2,9 +2,11 @@ import ProgressTitle from './components/ProgressTitle';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Research from './components/Research';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import Analytics from './components/Analytics';
 
 import { useState, useEffect } from 'react';
@@ -51,9 +53,11 @@ export default function App() {
       <Navbar isDark={isDark} onToggle={() => setIsDark(prev => !prev)} />
       <Hero />
       <About />
+      <Experience />
       <Projects />
       <Research />
       <Contact />
+      <Footer />
     </div>
   );
 }
