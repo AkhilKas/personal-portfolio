@@ -3,7 +3,6 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import App from '../App';
 
 // Mock all child components so this test only covers theme logic
-vi.mock('../components/Analytics', () => ({ default: () => null }));
 vi.mock('../components/ProgressTitle', () => ({ default: () => null }));
 vi.mock('../components/Navbar', () => ({
   default: ({ isDark, onToggle }) => (

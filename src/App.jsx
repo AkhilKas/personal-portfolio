@@ -7,8 +7,6 @@ import Projects from './components/Projects';
 import Research from './components/Research';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Analytics from './components/Analytics';
-
 import { useState, useEffect } from 'react';
 
 export default function App() {
@@ -44,7 +42,6 @@ export default function App() {
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900 light:bg-gray-50 text-gray-900 dark:text-white light:text-gray-900">
-      <Analytics />
       <ProgressTitle />
       <div
         className="fixed top-0 left-0 h-1 bg-blue-600 z-[60] transition-all duration-300 ease-out"
