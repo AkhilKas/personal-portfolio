@@ -24,8 +24,8 @@ export default function TechStack() {
   const duplicatedTechs = [...technologies, ...technologies];
 
   return (
-    <div className="mt-16 mb-20 pt-8 border-t border-gray-700 dark:border-gray-700 light:border-gray-200">
-      <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900 mb-6 text-center">Languages & Tools</h3>
+    <div className="mt-16 mb-20 pt-8 border-t border-gray-200 dark:border-gray-700 light:border-gray-200">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white light:text-gray-900 mb-6 text-center">Languages & Tools</h3>
 
       <div
         className="relative overflow-hidden"
@@ -33,8 +33,8 @@ export default function TechStack() {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Gradient Fade Edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-gray-900 dark:from-gray-900 light:from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-gray-900 dark:from-gray-900 light:from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white dark:from-gray-900 light:from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white dark:from-gray-900 light:from-white to-transparent z-10 pointer-events-none"></div>
 
         <div
           ref={scrollRef}
@@ -44,7 +44,7 @@ export default function TechStack() {
           {duplicatedTechs.map((tech, index) => (
             <div
               key={`${tech.name}-${index}`}
-              className="group flex flex-col items-center justify-center min-w-[80px] p-4 rounded-lg bg-gray-800/50 dark:bg-gray-800/50 light:bg-gray-100/70 border border-transparent dark:border-transparent light:border-gray-200 hover:bg-white/90 dark:hover:bg-white/90 light:hover:bg-white hover:border-gray-200 transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md"
+              className="group flex flex-col items-center justify-center min-w-[80px] p-4 rounded-lg bg-gray-100/70 dark:bg-gray-800/50 light:bg-gray-100/70 border border-transparent dark:border-transparent light:border-gray-200 hover:bg-white/90 dark:hover:bg-white/90 light:hover:bg-white hover:border-gray-200 transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md"
             >
               <div className="w-12 h-12 flex items-center justify-center mb-2">
                 <img

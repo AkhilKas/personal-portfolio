@@ -21,13 +21,13 @@ export default function Projects() {
   ];
 
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-900 dark:bg-gray-900 light:bg-gray-50" id="projects">
+    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-50 dark:bg-gray-900 light:bg-gray-50" id="projects">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-white dark:text-white light:text-gray-900">
+          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">
             Projects
           </h2>
-          <p className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
             Exploring the frontiers of AI and machine learning through hands-on research and development
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl overflow-hidden shadow-none dark:shadow-none light:shadow-sm hover:shadow-2xl dark:hover:shadow-2xl light:hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 dark:border-gray-700 light:border-gray-200 hover:border-blue-500/50 dark:hover:border-blue-500/50 light:hover:border-blue-300"
+              className="group bg-white dark:bg-gray-800 light:bg-white rounded-xl overflow-hidden shadow-none dark:shadow-none light:shadow-sm hover:shadow-2xl dark:hover:shadow-2xl light:hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700 light:border-gray-200 hover:border-blue-500/50 dark:hover:border-blue-500/50 light:hover:border-blue-300"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-48">
@@ -62,11 +62,11 @@ export default function Projects() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-white dark:text-white light:text-gray-900 group-hover:text-blue-400 dark:group-hover:text-blue-400 light:group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white light:text-gray-900 group-hover:text-blue-400 dark:group-hover:text-blue-400 light:group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -75,7 +75,7 @@ export default function Projects() {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-1 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 text-gray-300 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-200 transition-colors"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 text-gray-700 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-200 transition-colors"
                       >
                         {tech}
                       </span>

@@ -45,18 +45,18 @@ export default function Research() {
       case 'downloads': return 'text-blue-400 dark:text-blue-400 light:text-blue-600';
       case 'citations': return 'text-green-400 dark:text-green-400 light:text-green-600';
       case 'views': return 'text-purple-400 dark:text-purple-400 light:text-purple-600';
-      default: return 'text-gray-400 dark:text-gray-400 light:text-gray-500';
+      default: return 'text-gray-500 dark:text-gray-400 light:text-gray-500';
     }
   };
 
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-900 dark:bg-gray-900 light:bg-white" id="research">
+    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-white dark:bg-gray-900 light:bg-white" id="research">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-white dark:text-white light:text-gray-900">
+          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">
             Research & Publications
           </h2>
-          <p className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
             Exploring the frontiers of artificial intelligence through rigorous research,
             with focus on machine learning, computer vision, and practical AI applications.
           </p>
@@ -64,7 +64,7 @@ export default function Research() {
 
         {/* Published Research */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-white dark:text-white light:text-gray-900 flex items-center">
+          <h3 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white light:text-gray-900 flex items-center">
             <svg className="w-6 h-6 mr-3 text-green-400 dark:text-green-400 light:text-green-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h8a1 1 0 100-2H5z" clipRule="evenodd" />
             </svg>
@@ -72,7 +72,7 @@ export default function Research() {
           </h3>
 
           {publications.map((paper, index) => (
-            <div key={index} className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-700 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm mb-8">
+            <div key={index} className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-200 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm mb-8">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div className="flex-1">
                   <div className="flex items-center mb-2">
@@ -88,13 +88,13 @@ export default function Research() {
                     </span>
                   </div>
 
-                  <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900 mb-2 leading-tight">
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white light:text-gray-900 mb-2 leading-tight">
                     {paper.title}
                   </h4>
-                  <div className="text-gray-300 dark:text-gray-300 light:text-gray-700 mb-2">
+                  <div className="text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">
                     <span className="font-medium">{paper.authors.join(", ")}</span>
                   </div>
-                  <div className="text-gray-400 dark:text-gray-400 light:text-gray-500 text-sm">
+                  <div className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-sm">
                     <span className="font-medium">{paper.venue}</span> • {paper.year}
                     {paper.ssrnId && <span className="ml-2">• SSRN ID: {paper.ssrnId}</span>}
                   </div>
@@ -104,22 +104,22 @@ export default function Research() {
                   {Object.entries(paper.metrics).map(([key, value]) => (
                     <div key={key} className="text-center">
                       <div className={`text-lg font-bold ${getMetricColor(key)}`}>{value}</div>
-                      <div className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-500 capitalize">{key}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 light:text-gray-500 capitalize">{key}</div>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-400 light:text-gray-500 mb-2">ABSTRACT</h5>
-                <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-sm leading-relaxed">{paper.abstract}</p>
+                <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 light:text-gray-500 mb-2">ABSTRACT</h5>
+                <p className="text-gray-700 dark:text-gray-300 light:text-gray-700 text-sm leading-relaxed">{paper.abstract}</p>
               </div>
 
               <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-400 dark:text-gray-400 light:text-gray-500 mb-2">KEYWORDS</h5>
+                <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 light:text-gray-500 mb-2">KEYWORDS</h5>
                 <div className="flex flex-wrap gap-2">
                   {paper.keywords.map((keyword, idx) => (
-                    <span key={idx} className="px-2 py-1 bg-gray-700 dark:bg-gray-700 light:bg-gray-100 text-gray-300 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium">
+                    <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 text-gray-700 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium">
                       {keyword}
                     </span>
                   ))}
@@ -161,7 +161,7 @@ export default function Research() {
 
         {/* Research Areas */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-white dark:text-white light:text-gray-900 flex items-center">
+          <h3 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white light:text-gray-900 flex items-center">
             <svg className="w-6 h-6 mr-3 text-purple-400 dark:text-purple-400 light:text-purple-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
@@ -169,13 +169,13 @@ export default function Research() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {researchAreas.map((area, index) => (
-              <div key={index} className="bg-gray-800 dark:bg-gray-800 light:bg-white rounded-xl p-6 border border-gray-700 dark:border-gray-700 light:border-gray-200 hover:border-gray-600 dark:hover:border-gray-600 light:hover:border-gray-300 shadow-none dark:shadow-none light:shadow-sm hover:shadow-md transition-all">
+              <div key={index} className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700 light:border-gray-200 hover:border-gray-600 dark:hover:border-gray-600 light:hover:border-gray-300 shadow-none dark:shadow-none light:shadow-sm hover:shadow-md transition-all">
                 <div className="text-3xl mb-4">{area.icon}</div>
-                <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">{area.title}</h4>
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white light:text-gray-900 mb-3">{area.title}</h4>
                 <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4">{area.description}</p>
                 <div className="space-y-2">
                   {area.projects.map((project, idx) => (
-                    <div key={idx} className="text-xs text-gray-400 dark:text-gray-400 light:text-gray-500 flex items-center">
+                    <div key={idx} className="text-xs text-gray-500 dark:text-gray-400 light:text-gray-500 flex items-center">
                       <span className="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>
                       {project}
                     </div>
