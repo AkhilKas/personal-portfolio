@@ -4,24 +4,65 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
 
-html {
-  scroll-behavior: smooth;
+/* ── Design tokens ── */
+:root, .light {
+  --paper:      #f3efe6;
+  --paper-deep: #ebe5d8;
+  --ink:        #1b1a16;
+  --ink-soft:   #4a473e;
+  --ink-faint:  #8a8678;
+  --accent:     #e0441e;
+  --accent-deep:#b8350f;
+  --line:       rgba(27, 26, 22, 0.14);
+  --line-soft:  rgba(27, 26, 22, 0.07);
 }
 
-@keyframes waveX {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(-20px); }
+.dark {
+  --paper:      #151412;
+  --paper-deep: #1e1c19;
+  --ink:        #f0ece3;
+  --ink-soft:   #b5b0a5;
+  --ink-faint:  #6b6760;
+  --accent:     #e0441e;
+  --accent-deep:#f05535;
+  --line:       rgba(240, 236, 227, 0.12);
+  --line-soft:  rgba(240, 236, 227, 0.06);
 }
 
-@keyframes waveXSlow {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 1px 1px, var(--line-soft) 1px, transparent 0);
+  background-size: 28px 28px;
 }
 
-.animate-waveX {
-  animation: waveX 6s ease-in-out infinite;
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ── About two-column grid ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+}
+@media (max-width: 820px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
-.animate-waveXSlow {
-  animation: waveXSlow 12s ease-in-out infinite;
+/* ── Hero pulse dot ── */
+@keyframes pulse-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(224, 68, 30, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(224, 68, 30, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(224, 68, 30, 0); }
 }
+.animate-pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* ── TechStack scroll ── */
+@keyframes scroll-continuous {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-continuous { animation: scroll-continuous 30s linear infinite; }

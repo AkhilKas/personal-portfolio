@@ -1,190 +1,120 @@
+const publications = [
+  {
+    kind: "Published Paper",
+    title: "Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare-based Consortium Blockchains",
+    authors: "Akhilesh Kasturi, Beena B.M",
+    venue: "ICICC 2024",
+    abstract: "Introduces PoTE, a consensus mechanism leveraging medical professionals' trust and expertise for secure, auditable healthcare data management across consortium blockchains.",
+    metrics: { downloads: "50+", citations: "1", views: "300+" },
+    link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4804243",
+    status: "Published",
+  },
+];
+
+const researchAreas = [
+  {
+    kind: "Machine Learning",
+    title: "Healthcare AI & MLOps",
+    description: "Developing reliable AI systems for clinical settings, with a focus on interpretability, fairness, and production-grade deployment.",
+  },
+  {
+    kind: "Computer Vision",
+    title: "Perception Systems",
+    description: "Advanced perception for autonomous systems and medical imaging, from LiDAR point cloud processing to chest X-ray classification.",
+  },
+  {
+    kind: "Audio Processing",
+    title: "Acoustic Analysis",
+    description: "Signal processing and machine learning for acoustic feature extraction, including voice-based classification at scale.",
+  },
+];
+
 export default function Research() {
-
-  const publications = [
-    {
-      title: "Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains",
-      authors: ["Akhilesh Kasturi", "Beena B.M"],
-      venue: "Proceedings of the International Conference on Innovative Computing & Communication (ICICC 2024)",
-      year: "2024",
-      type: "Conference Paper",
-      abstract: "The growing adoption of blockchain in healthcare promotes reliable patient data management. Establishing a consortium blockchain network interconnecting hospitals, diagnostic laboratories, and pharmaceutical entities ensures real-time tamper-evident access to patient records. This decentralized model enhances the data exchange efficiency and fortifies security through immutable audit trails. Beyond expediting emergency access to comprehensive medical histories, blockchains prevent authoritative data control and commercial exploitation. Patient empowerment and trust are pivotal, prompting our paper to introduce Proof-of-Trust-in-Expertise (PoTE), a consensus mechanism leveraging medical professionals' trust and expertise, an innovative departure from Proof-of-Work (PoW) and Proof-of-Stake (PoS).",
-      keywords: ["Blockchain", "Consensus Mechanism", "Healthcare", "Proof-of-Trust", "Consortium Blockchain", "Trust Management"],
-      ssrnId: "4804243",
-      status: "Published",
-      metrics: { downloads: "50+", citations: "1", views: "300+" },
-      links: {
-        ssrn: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4804243",
-        pdf: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4804243"
-      }
-    }
-  ];
-
-  const researchAreas = [
-    {
-      title: "Machine Learning",
-      description: "Developing novel algorithms and architectures for complex AI problems",
-      icon: "🧠",
-      projects: ["Multi-frame Depth Estimation", "Neural Architecture Search"]
-    },
-    {
-      title: "Computer Vision",
-      description: "Advanced perception systems for autonomous vehicles and robotics",
-      icon: "👁️",
-      projects: ["LiDAR Point Cloud Processing", "3D Object Detection"]
-    },
-    {
-      title: "Audio Processing",
-      description: "Signal processing and machine learning for acoustic analysis",
-      icon: "🎵",
-      projects: ["Voice Classification", "Audio Feature Extraction"]
-    }
-  ];
-
-  const getMetricColor = (type) => {
-    switch (type) {
-      case 'downloads': return 'text-blue-400 dark:text-blue-400 light:text-blue-600';
-      case 'citations': return 'text-green-400 dark:text-green-400 light:text-green-600';
-      case 'views': return 'text-purple-400 dark:text-purple-400 light:text-purple-600';
-      default: return 'text-gray-500 dark:text-gray-400 light:text-gray-500';
-    }
-  };
-
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-white dark:bg-gray-900 light:bg-white" id="research">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">
-            Research & Publications
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
-            Exploring the frontiers of artificial intelligence through rigorous research,
-            with focus on machine learning, computer vision, and practical AI applications.
-          </p>
+    <section className="py-24 border-t" style={{ borderColor: 'var(--line)' }} id="research">
+      <div className="max-w-[1180px] mx-auto px-8">
+
+        {/* Section header */}
+        <div className="flex items-baseline gap-4 mb-14">
+          <span className="font-mono text-xs font-semibold tracking-widest text-accent">04</span>
+          <h2 className="font-serif font-normal text-4xl tracking-tight text-ink">Research</h2>
+          <span className="flex-1 h-px self-center ml-2" style={{ background: 'var(--line)' }} />
         </div>
 
-        {/* Published Research */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white light:text-gray-900 flex items-center">
-            <svg className="w-6 h-6 mr-3 text-green-400 dark:text-green-400 light:text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h8a1 1 0 100-2H5z" clipRule="evenodd" />
-            </svg>
-            Published Research
-          </h3>
-
-          {publications.map((paper, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-8 border border-gray-200 dark:border-gray-700 light:border-gray-200 shadow-none dark:shadow-none light:shadow-sm mb-8">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center mb-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${
-                      paper.status === 'Published'
-                        ? 'bg-green-600/20 dark:bg-green-600/20 light:bg-green-100 text-green-400 dark:text-green-400 light:text-green-700 border border-green-600/30 dark:border-green-600/30 light:border-green-300'
-                        : 'bg-yellow-600/20 dark:bg-yellow-600/20 light:bg-yellow-100 text-yellow-400 dark:text-yellow-400 light:text-yellow-700 border border-yellow-600/30 dark:border-yellow-600/30 light:border-yellow-300'
-                    }`}>
-                      {paper.status}
-                    </span>
-                    <span className="px-3 py-1 bg-blue-600/20 dark:bg-blue-600/20 light:bg-blue-100 text-blue-400 dark:text-blue-400 light:text-blue-700 border border-blue-600/30 dark:border-blue-600/30 light:border-blue-300 rounded-full text-xs font-medium">
-                      {paper.type}
-                    </span>
-                  </div>
-
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white light:text-gray-900 mb-2 leading-tight">
-                    {paper.title}
-                  </h4>
-                  <div className="text-gray-700 dark:text-gray-300 light:text-gray-700 mb-2">
-                    <span className="font-medium">{paper.authors.join(", ")}</span>
-                  </div>
-                  <div className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-sm">
-                    <span className="font-medium">{paper.venue}</span> • {paper.year}
-                    {paper.ssrnId && <span className="ml-2">• SSRN ID: {paper.ssrnId}</span>}
-                  </div>
+        {/* Publication */}
+        {publications.map((paper, i) => (
+          <div key={i} className="p-7 rounded-sm border mb-8 transition-all duration-300" style={{ background: 'var(--paper-deep)', border: '1px solid var(--line)' }}>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="font-mono text-[0.66rem] tracking-[0.12em] uppercase text-accent">{paper.kind}</span>
+                  <span className="font-mono text-[0.66rem] tracking-[0.08em] uppercase px-2 py-0.5 rounded-sm" style={{ color: 'var(--ink-faint)', background: 'var(--paper)', border: '1px solid var(--line-soft)' }}>
+                    {paper.status}
+                  </span>
                 </div>
-
-                <div className="flex mt-4 md:mt-0 md:ml-6 space-x-6">
-                  {Object.entries(paper.metrics).map(([key, value]) => (
-                    <div key={key} className="text-center">
-                      <div className={`text-lg font-bold ${getMetricColor(key)}`}>{value}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 light:text-gray-500 capitalize">{key}</div>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="font-serif font-medium text-[1.25rem] leading-snug mb-2 text-ink">{paper.title}</h3>
+                <p className="font-sans text-sm mb-1" style={{ color: 'var(--ink-soft)' }}>{paper.authors}</p>
+                <p className="font-mono text-[0.7rem] tracking-[0.06em]" style={{ color: 'var(--ink-faint)' }}>{paper.venue}</p>
               </div>
-
-              <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 light:text-gray-500 mb-2">ABSTRACT</h5>
-                <p className="text-gray-700 dark:text-gray-300 light:text-gray-700 text-sm leading-relaxed">{paper.abstract}</p>
+              <div className="flex gap-8 md:gap-6 flex-shrink-0">
+                {Object.entries(paper.metrics).map(([k, v]) => (
+                  <div key={k} className="text-center">
+                    <div className="font-serif font-semibold text-xl text-accent" style={{ fontVariationSettings: '"opsz" 144' }}>{v}</div>
+                    <div className="font-mono text-[0.62rem] tracking-[0.08em] uppercase mt-1" style={{ color: 'var(--ink-faint)' }}>{k}</div>
+                  </div>
+                ))}
               </div>
+            </div>
+            <p className="text-[0.94rem] leading-[1.55] mb-5" style={{ color: 'var(--ink-soft)' }}>{paper.abstract}</p>
+            <div className="flex gap-3">
+              <a
+                href={paper.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-[0.7rem] tracking-[0.08em] uppercase px-4 py-2 rounded-sm transition-all duration-200"
+                style={{ background: 'var(--ink)', color: 'var(--paper)', border: '1px solid var(--ink)' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'var(--ink)'; e.currentTarget.style.borderColor = 'var(--ink)'; }}
+              >
+                View on SSRN
+              </a>
+              <button
+                onClick={() => {
+                  const citation = "Kasturi, Akhilesh et al., Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains (April 23, 2024). ICICC 2024, Available at SSRN: https://ssrn.com/abstract=4804243";
+                  navigator.clipboard.writeText(citation);
+                  const btn = event.target.closest('button');
+                  const orig = btn.textContent;
+                  btn.textContent = 'Copied!';
+                  setTimeout(() => { btn.textContent = orig; }, 2000);
+                }}
+                className="font-mono text-[0.7rem] tracking-[0.08em] uppercase px-4 py-2 rounded-sm border transition-all duration-200"
+                style={{ color: 'var(--ink-soft)', borderColor: 'var(--line)' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--paper)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}
+              >
+                Cite
+              </button>
+            </div>
+          </div>
+        ))}
 
-              <div className="mb-6">
-                <h5 className="text-sm font-semibold text-gray-500 dark:text-gray-400 light:text-gray-500 mb-2">KEYWORDS</h5>
-                <div className="flex flex-wrap gap-2">
-                  {paper.keywords.map((keyword, idx) => (
-                    <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 text-gray-700 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium">
-                      {keyword}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={paper.links.ssrn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm2 2a1 1 0 000 2h8a1 1 0 100-2H5z" clipRule="evenodd" />
-                  </svg>
-                  View on SSRN
-                </a>
-                <button
-                  onClick={() => {
-                    const citation = "Bagga, Karan Singh and Kasturi, Akhilesh and Kunrarasu, Sonaakshi Shri and B.M, Beena, Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains (April 23, 2024). Proceedings of the International Conference on Innovative Computing & Communication (ICICC 2024), Available at SSRN: https://ssrn.com/abstract=4804243 or http://dx.doi.org/10.2139/ssrn.4804243";
-                    navigator.clipboard.writeText(citation);
-                    const button = event.target.closest('button');
-                    const originalText = button.innerHTML;
-                    button.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>Copied!';
-                    setTimeout(() => { button.innerHTML = originalText; }, 2000);
-                  }}
-                  className="flex items-center gap-2 bg-gray-700 dark:bg-gray-700 light:bg-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-300 text-white dark:text-white light:text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-                  </svg>
-                  Cite Paper
-                </button>
-              </div>
+        {/* Research areas */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
+          {researchAreas.map((area, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-sm border transition-all duration-300"
+              style={{ background: 'var(--paper-deep)', border: '1px solid var(--line)' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; }}
+            >
+              <div className="font-mono text-[0.66rem] tracking-[0.12em] uppercase mb-3 text-accent">{area.kind}</div>
+              <h4 className="font-serif font-medium text-[1.2rem] mb-2 text-ink">{area.title}</h4>
+              <p className="text-[0.94rem] leading-[1.55]" style={{ color: 'var(--ink-soft)' }}>{area.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Research Areas */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-gray-900 dark:text-white light:text-gray-900 flex items-center">
-            <svg className="w-6 h-6 mr-3 text-purple-400 dark:text-purple-400 light:text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            Research Areas
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {researchAreas.map((area, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 light:bg-white rounded-xl p-6 border border-gray-200 dark:border-gray-700 light:border-gray-200 hover:border-gray-600 dark:hover:border-gray-600 light:hover:border-gray-300 shadow-none dark:shadow-none light:shadow-sm hover:shadow-md transition-all">
-                <div className="text-3xl mb-4">{area.icon}</div>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white light:text-gray-900 mb-3">{area.title}</h4>
-                <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4">{area.description}</p>
-                <div className="space-y-2">
-                  {area.projects.map((project, idx) => (
-                    <div key={idx} className="text-xs text-gray-500 dark:text-gray-400 light:text-gray-500 flex items-center">
-                      <span className="w-1 h-1 bg-blue-500 rounded-full mr-2"></span>
-                      {project}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
