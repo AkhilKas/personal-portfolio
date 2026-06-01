@@ -1,111 +1,128 @@
-export default function Projects() {
-  const projects = [
-    {
-      title: "Starlink Constellation Optimization with Local Search",
-      description: "Low Earth Orbit (LEO) satellites enable global communications with reduced signal latency and higher data transfer speeds compared to traditional satellites. However, these satellites face certain limitations - their relatively short operational lifespan of approximately 7-10 years, requiring frequent replacements to maintain network coverage. The SpaceX Starlink network is currently the most extensive and technologically advanced satellite constellation in low earth orbit, offering high-speed, low-latency broadband internet worldwide. This project addresses the optimization of satellite placement in the Starlink constellation to achieve maximum area coverage.",
-      technologies: ["Python", "NumPy", "GeoPandas", "Matplotlib", "CelesTrak API"],
-      category: "Artificial Intelligence",
-      image: "/satellite.png",
-      github: "https://github.com/CS-5100/Satellite",
-      demo: null
-    },
-    {
-      title: "PPO Ablation Study for No-Limit Texas Hold'em",
-      description: "No-Limit Texas Hold'em is a poker variant where players combine two private cards with five community cards to form the best hand, with no cap on bet sizes during any betting round. This imperfect-information game presents unique challenges for AI systems, requiring agents to balance exploitation and exploration while adapting to opponent strategies without complete knowledge of the game state. This project conducts an ablation study comparing two Proximal Policy Optimization (PPO) variants—PPO-Clip and PPO-KL—to understand how different constraint mechanisms shape learning dynamics and strategic behavior in complex poker environments.",
-      technologies: ["Python", "PyTorch", "RLCard", "PPO", "Reinforcement Learning"],
-      category: "Reinforcement Learning",
-      image: "/poker.jpg",
-      github: "https://github.com/CS-5180/No-Limit-Texas-Hold-em",
-      demo: null
-    },
-  ];
+const projects = [
+  {
+    title: 'Patient Communication Assistant',
+    role: 'RAG Application · Solo build',
+    description: 'A retrieval-augmented app that rewrites dense medical documents to an 8th-grade reading level. A two-stage prompting pipeline with a custom cosine-similarity evaluation framework, built after catching a dangerous over-simplification bug. Deployed on Hugging Face Spaces.',
+    stack: ['ChromaDB', 'Phi-3', 'HuggingFace', 'FastAPI', 'React'],
+    metric: { value: '85%', label: 'Semantic accuracy' },
+    github: 'https://github.com/AkhilKas/patient-comm-assistant',
+  },
+  {
+    title: 'RewardSense',
+    role: 'End-to-end MLOps Platform',
+    description: 'A full lifecycle pipeline for spend-behavior modeling: synthetic data generation across seven archetypes, anomaly and bias detection with Fairlearn, experiment tracking, drift monitoring, and a business reporting layer wired to Slack alerts and a FastAPI / React frontend.',
+    stack: ['MLflow', 'Evidently AI', 'Fairlearn', 'GCP', 'FastAPI'],
+    metric: { value: '5', label: 'Lifecycle epics' },
+    github: 'https://github.com/AkhilKas/rewardsense',
+  },
+  {
+    title: 'Medical Imaging Classifier',
+    role: 'Chest X-ray Diagnosis · CheXpert',
+    description: 'An EfficientNet-B0 model for multi-label chest pathology detection on CheXpert, paired with Grad-CAM interpretability and a systematic study of uncertainty-label handling strategies so clinicians can see why a prediction was made.',
+    stack: ['PyTorch', 'EfficientNet', 'Grad-CAM', 'CheXpert'],
+    metric: { value: '0.87', label: 'AUC' },
+    github: 'https://github.com/AkhilKas/weak-labels-cxr',
+  },
+  {
+    title: 'XAI Healthcare Dashboard',
+    role: 'Explainable Motion Assessment',
+    description: 'Orthopedic motion assessment from IMU sensors using LSTM/GRU, 1D CNN, and HMM models, presented through a three-layer progressive-disclosure interface with SHAP explanations. Grounded in user research with clinical stakeholders at MGH.',
+    stack: ['LSTM / GRU', 'SHAP', 'React', 'FastAPI', 'Gemini'],
+    metric: { value: '3', label: 'Disclosure layers' },
+    github: 'https://github.com/AkhilKas/XAI-Healthcare',
+  },
+  {
+    title: 'Temporal Health Transformer',
+    role: 'Research Infrastructure Lead · 7-person team',
+    description: 'Early disease-risk prediction from longitudinal EHRs. Built the full repo scaffold (Hydra, DVC, Docker, GitHub Actions CI), a Synthea data pipeline with ICD-10 mapping, and resolved the CI/CD failures that kept the team moving toward publication.',
+    stack: ['Transformers', 'Hydra', 'DVC', 'Docker', 'CI/CD'],
+    metric: { value: '7', label: 'Team size' },
+    github: null,
+  },
+];
 
+export default function Projects() {
   return (
-    <section className="min-h-screen p-10 scroll-mt-16 md:scroll-mt-20 lg:scroll-mt-24 bg-gray-50 dark:bg-gray-900 light:bg-gray-50" id="projects">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-gray-900 dark:text-white light:text-gray-900">
-            Projects
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 light:text-gray-500 text-lg max-w-3xl mx-auto">
-            Exploring the frontiers of AI and machine learning through hands-on research and development
-          </p>
+    <section className="py-24 border-t" style={{ borderColor: 'var(--line)' }} id="projects">
+      <div className="max-w-[1180px] mx-auto px-8">
+
+        {/* Section header */}
+        <div className="flex items-baseline gap-4 mb-14">
+          <span className="font-mono text-xs font-semibold tracking-widest text-accent">03</span>
+          <h2 className="font-serif font-normal text-4xl tracking-tight text-ink">Selected Work</h2>
+          <span className="flex-1 h-px self-center ml-2" style={{ background: 'var(--line)' }} />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="flex flex-col">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-800 light:bg-white rounded-xl overflow-hidden shadow-none dark:shadow-none light:shadow-sm hover:shadow-2xl dark:hover:shadow-2xl light:hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700 light:border-gray-200 hover:border-blue-500/50 dark:hover:border-blue-500/50 light:hover:border-blue-300"
+              className="grid py-8 px-2 border-t transition-all duration-300 cursor-default"
+              style={{
+                gridTemplateColumns: '48px 1fr 120px',
+                gap: '26px',
+                borderColor: 'var(--line-soft)',
+                alignItems: 'start',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--paper-deep)'; e.currentTarget.style.paddingLeft = '20px'; e.currentTarget.style.paddingRight = '20px'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.paddingLeft = '8px'; e.currentTarget.style.paddingRight = '8px'; }}
             >
-              {/* Project Image */}
-              <div className="relative overflow-hidden h-48">
-                {project.image && !project.image.includes('placeholder') ? (
-                  <>
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-gray-800/90 dark:to-gray-800/90 light:to-white/80"></div>
-                  </>
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
-                    <div className="text-4xl text-blue-400/30">
-                      {project.category === 'Artificial Intelligence' && '🛰️'}
-                      {project.category === 'Reinforcement Learning' && '🎰'}
-                    </div>
-                  </div>
-                )}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 bg-blue-600/90 text-white text-sm rounded-full font-medium backdrop-blur-sm">
-                    {project.category}
-                  </span>
+              {/* Number */}
+              <div className="font-mono text-sm pt-1.5" style={{ color: 'var(--ink-faint)' }}>
+                /{String(index + 1).padStart(2, '0')}
+              </div>
+
+              {/* Content */}
+              <div>
+                <h3 className="font-serif font-medium text-[1.5rem] tracking-[-0.01em] leading-snug mb-1.5 text-ink">
+                  {project.title}
+                </h3>
+                <div className="font-mono text-[0.7rem] tracking-[0.1em] uppercase mb-3" style={{ color: 'var(--accent-deep)' }}>
+                  {project.role}
+                </div>
+                <p className="text-[1rem] leading-[1.6] mb-4 max-w-[62ch]" style={{ color: 'var(--ink-soft)' }}>
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((tech, i) => (
+                    <span key={i} className="font-mono text-[0.66rem] tracking-[0.03em] px-2 py-1 rounded-sm border" style={{ color: 'var(--ink-faint)', borderColor: 'var(--line-soft)' }}>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white light:text-gray-900 group-hover:text-blue-400 dark:group-hover:text-blue-400 light:group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 light:bg-gray-100 text-gray-700 dark:text-gray-300 light:text-gray-700 text-xs rounded-md font-medium hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-200 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+              {/* Metric + optional GitHub link */}
+              <div className="text-right pt-1 flex flex-col items-end gap-4">
+                <div>
+                  <div
+                    className="font-serif font-semibold leading-none"
+                    style={{ fontSize: '2.1rem', fontVariationSettings: '"opsz" 144', color: 'var(--accent)' }}
+                  >
+                    {project.metric.value}
+                  </div>
+                  <div className="font-mono text-[0.62rem] tracking-[0.08em] uppercase mt-1.5" style={{ color: 'var(--ink-faint)' }}>
+                    {project.metric.label}
                   </div>
                 </div>
-
-                <div className={`flex gap-3 ${project.demo ? '' : 'justify-center'}`}>
+                {project.github && (
                   <a
                     href={project.github}
-                    className={`${project.demo ? 'flex-1' : 'flex-1 max-w-xs'} bg-gray-700 dark:bg-gray-700 light:bg-gray-100 hover:bg-gray-600 dark:hover:bg-gray-600 light:hover:bg-gray-200 text-white dark:text-white light:text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[0.66rem] tracking-[0.08em] uppercase px-3 py-2 border rounded-sm transition-all duration-200 whitespace-nowrap"
+                    style={{ color: 'var(--ink-soft)', borderColor: 'var(--line)' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--ink)'; e.currentTarget.style.color = 'var(--paper)'; e.currentTarget.style.borderColor = 'var(--ink)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--ink-soft)'; e.currentTarget.style.borderColor = 'var(--line)'; }}
                   >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-                    </svg>
-                    Code
+                    View code
                   </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center flex items-center justify-center gap-2"
-                    >
-                      Demo
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

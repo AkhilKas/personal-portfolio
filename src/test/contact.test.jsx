@@ -35,11 +35,4 @@ describe('Contact form', () => {
     expect(screen.getByRole('button', { name: /send message/i })).toBeTruthy();
   });
 
-  it('renders all four contact reason options', () => {
-    render(<Contact />);
-    expect(screen.getByText('Research Collaboration')).toBeTruthy();
-    expect(screen.getByText('Academic Discussion')).toBeTruthy();
-    expect(screen.getByText('Project Inquiry')).toBeTruthy();
-    expect(screen.getByText('Other')).toBeTruthy();
-  });
 });

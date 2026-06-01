@@ -7,24 +7,20 @@ import Projects from './components/Projects';
 import Research from './components/Research';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 import { useState, useEffect } from 'react';
 
 export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isDark, setIsDark] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
+  const [isDark, setIsDark] = useState(() => localStorage.getItem('theme') === 'dark');
 
   useEffect(() => {
-    const updateScroll = () => {
-      const scrollTop = window.scrollY;
+    const update = () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = (scrollTop / docHeight) * 100;
-      setScrollProgress(scrolled);
+      setScrollProgress(docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0);
     };
-
-    window.addEventListener('scroll', updateScroll);
-    return () => window.removeEventListener('scroll', updateScroll);
+    window.addEventListener('scroll', update);
+    return () => window.removeEventListener('scroll', update);
   }, []);
 
   useEffect(() => {
@@ -41,13 +37,13 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 light:bg-gray-50 text-gray-900 dark:text-white light:text-gray-900">
+    <div className="text-ink min-h-screen">
       <ProgressTitle />
       <div
-        className="fixed top-0 left-0 h-1 bg-blue-600 z-[60] transition-all duration-300 ease-out"
+        className="fixed top-0 left-0 h-[2px] bg-accent z-[60] transition-all duration-300 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
-      <Navbar isDark={isDark} onToggle={() => setIsDark(prev => !prev)} />
+      <Navbar isDark={isDark} onToggle={() => setIsDark(p => !p)} />
       <Hero />
       <About />
       <Experience />
