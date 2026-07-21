@@ -18,14 +18,15 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="font-serif font-normal leading-[0.95] tracking-[-0.02em] mb-8"
-          style={{ fontSize: 'clamp(3rem, 8.5vw, 7.2rem)', maxWidth: '14ch' }}
+          className="font-serif font-normal leading-[1.05] tracking-[-0.02em] mb-8"
+          style={{ fontSize: 'clamp(2rem, 5.2vw, 4.4rem)', maxWidth: '24ch' }}
         >
-          Building ML systems for{' '}
+          Building ML systems<br />
+          the world can{' '}
           <em className="italic" style={{ color: 'var(--accent)', fontVariationSettings: '"opsz" 144' }}>
-            healthcare
+            rely on
           </em>
-          , end to end.
+          .
         </h1>
 
         {/* Sub */}
