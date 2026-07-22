@@ -1,3 +1,5 @@
+import CountUp from './CountUp';
+
 const projects = [
   {
     title: 'Patient Communication Assistant',
@@ -99,7 +101,7 @@ export default function Projects() {
                     className="font-serif font-semibold leading-none"
                     style={{ fontSize: '2.1rem', fontVariationSettings: '"opsz" 144', color: 'var(--accent)' }}
                   >
-                    {project.metric.value}
+                    <CountUp value={project.metric.value} />
                   </div>
                   <div className="font-mono text-[0.62rem] tracking-[0.08em] uppercase mt-1.5" style={{ color: 'var(--ink-faint)' }}>
                     {project.metric.label}
