@@ -22,7 +22,7 @@ export default function Hero() {
           style={{ fontSize: 'clamp(2rem, 5.2vw, 4.4rem)', maxWidth: '24ch' }}
         >
           Building ML systems<br />
-          the world can{' '}
+          you can{' '}
           <em className="italic" style={{ color: 'var(--accent)', fontVariationSettings: '"opsz" 144' }}>
             rely on
           </em>

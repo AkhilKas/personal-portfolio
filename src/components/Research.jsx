@@ -1,3 +1,5 @@
+import CountUp from './CountUp';
+
 const publications = [
   {
     kind: "Published Paper",
@@ -59,7 +61,9 @@ export default function Research() {
               <div className="flex gap-8 md:gap-6 flex-shrink-0">
                 {Object.entries(paper.metrics).map(([k, v]) => (
                   <div key={k} className="text-center">
-                    <div className="font-serif font-semibold text-xl text-accent" style={{ fontVariationSettings: '"opsz" 144' }}>{v}</div>
+                    <div className="font-serif font-semibold text-xl" style={{ fontVariationSettings: '"opsz" 144', color: 'var(--accent)' }}>
+                      <CountUp value={v} />
+                    </div>
                     <div className="font-mono text-[0.62rem] tracking-[0.08em] uppercase mt-1" style={{ color: 'var(--ink-faint)' }}>{k}</div>
                   </div>
                 ))}
