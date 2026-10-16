@@ -1,8 +1,23 @@
 @import "tailwindcss";
-@import "flowbite";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
+
+/* ── Tailwind theme: fonts + colour utilities (text-ink, bg-accent, …) ──
+   `inline` makes utilities reference the vars below directly, so they follow the light/dark swap. */
+@theme inline {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans:  "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono:  "JetBrains Mono", monospace;
+
+  --color-paper:       var(--paper);
+  --color-paper-deep:  var(--paper-deep);
+  --color-ink:         var(--ink);
+  --color-ink-soft:    var(--ink-soft);
+  --color-ink-faint:   var(--ink-faint);
+  --color-accent:      var(--accent);
+  --color-accent-deep: var(--accent-deep);
+}
 
 /* ── Design tokens ── */
 :root, .light {
