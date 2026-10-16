@@ -7,7 +7,6 @@ import { render } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 
 vi.mock('@emailjs/browser', () => ({ default: { send: vi.fn() } }));
-vi.mock('react-ga4', () => ({ default: { initialize: vi.fn(), send: vi.fn() } }));
 
 const REQUIRED_SECTIONS = ['hero', 'about', 'experience', 'projects', 'research', 'contact'];
 
