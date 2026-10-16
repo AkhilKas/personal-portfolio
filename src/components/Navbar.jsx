@@ -89,7 +89,7 @@ export default function Navbar({ isDark, onToggle }) {
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
             )}
           </button>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2" style={{ color: 'var(--ink-faint)' }}>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open menu" aria-expanded={isMenuOpen} className="p-2" style={{ color: 'var(--ink-faint)' }}>
             <svg className="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>

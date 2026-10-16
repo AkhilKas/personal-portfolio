@@ -1,0 +1,6 @@
+# After a pull/merge: reinstall dependencies if the lockfile changed,
+# so local checks run against the same packages as CI.
+if git diff --name-only ORIG_HEAD HEAD | grep -q '^package-lock.json$'; then
+  echo "package-lock.json changed: running npm ci"
+  npm ci
+fi

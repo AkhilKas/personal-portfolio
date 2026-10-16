@@ -1,0 +1,2 @@
+# Lint only the staged JS/JSX files — fast enough to run on every commit.
+npx lint-staged

@@ -18,5 +18,6 @@ Object.defineProperty(window, 'matchMedia', {
 // clipboard not available in jsdom
 Object.defineProperty(navigator, 'clipboard', {
   writable: true,
+  configurable: true, // user-event replaces it with its own stub
   value: { writeText: vi.fn().mockResolvedValue(undefined) },
 });

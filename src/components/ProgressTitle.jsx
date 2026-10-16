@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
+const baseTitle = "Akhilesh";
+
+const sectionTitles = {
+  'Hero': 'AI Researcher',
+  'About': 'My Journey',
+  'Projects': 'Relevant Work',
+  'Research': 'Publications',
+  'Contact': 'Let\'s Connect'
+};
+
 export default function ProgressTitle() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState('Hero');
-
-  const baseTitle = "Akhilesh";
-  
-  const sectionTitles = {
-    'Hero': 'AI Researcher',
-    'About': 'My Journey', 
-    'Projects': 'Relevant Work',
-    'Research': 'Publications',
-    'Contact': 'Let\'s Connect'
-  };
 
   useEffect(() => {
     const updateProgress = () => {
@@ -46,7 +46,7 @@ export default function ProgressTitle() {
   useEffect(() => {
     // Update title with just section name
     document.title = `${baseTitle} | ${sectionTitles[currentSection]}`;
-  }, [scrollProgress, currentSection, baseTitle, sectionTitles]);
+  }, [scrollProgress, currentSection]);
 
   return null; // This component doesn't render anything
 }
